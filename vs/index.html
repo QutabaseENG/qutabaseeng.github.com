@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="../logo.png">
+	<title>QUTABASE - VS</title>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="vs.css">
+	<link rel="stylesheet" type="text/css" href="vs_info.css">
+	<link rel="stylesheet" type="text/css" href="vs_list.css">
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="../vs/index.html"><li>마도서 비교</li></a>
+			<a href="../rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
+			<a href="../print/index.html"><li>연차 시뮬레이터</li></a>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+		</ul>
+	</nav>
+	<header id="kodex_form">
+		<a href="../"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<section id="kodex_vs_info">
+			<div style="text-align: center; width: 100%; padding: 19px 0px; display: block; background: #FFE31E;">
+				비교할 마도서
+			</div>
+			<div id="info_vsT" style="margin: 5px; width: calc(100% - 10px); margin-top: 0;">
+				<div class="info_imgBox">
+					<img src="../raw.png" id="vsT_face">
+				</div>
+				<div id="vsT_rarity" class="info_rarity">
+					SR+
+				</div>
+				<div id="vsT_skill" class="info_skill">
+					큐타베이스
+				</div>
+				<div id="vsT_name" class="info_name">
+					<input type="text" id="vsT_input" class="info_input" onkeyup="vsCheck(this)" placeholder="여기에이름이붙어요">
+				</div>
+				<div class="info_effectBox">
+					<div id="vsT_effect" class="info_effect"></div>
+				</div>
+				<div>
+					<div class="info_statchart" style="width: 128px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							스탯
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							HP
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							ATK
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							SPR
+						</div>
+					</div>
+					<div class="info_statchart" style="width: calc(100% - 133px); margin-left: 5px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							<input id="vsT_lv" class="info_lv" onchange="vsCheck(this);"> 레벨 
+							<input id="vsT_bind" class="info_bind" onchange="vsCheck(this);"> 결속
+						</div>
+						<div id="vsT_hp" class="info_stat">
+							0000
+						</div>
+						<div id="vsT_atk" class="info_stat">
+							0000
+						</div>
+						<div id="vsT_spr" class="info_stat">
+							0000
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="info_vsB" style="margin: 5px; width: calc(100% - 10px); margin-top: 0;">
+				<div class="info_imgBox">
+					<img src="../raw.png" id="vsB_face">
+				</div>
+				<div id="vsB_rarity" class="info_rarity">
+					SR+
+				</div>
+				<div id="vsB_skill" class="info_skill">
+					큐타베이스
+				</div>
+				<div id="vsB_name" class="info_name">
+					<input type="text" id="vsB_input" class="info_input" onkeyup="vsCheck(this)" placeholder="여기에이름이붙어요">
+				</div>
+				<div class="info_effectBox">
+					<div id="vsB_effect" class="info_effect"></div>
+				</div>
+				<div>
+					<div class="info_statchart" style="width: 128px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							스탯
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							HP
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							ATK
+						</div>
+						<div class="info_stat" style="background: #5A688A; color: white; text-align: left;">
+							SPR
+						</div>
+					</div>
+					<div class="info_statchart" style="width: calc(100% - 133px); margin-left: 5px;">
+						<div class="info_stat" style="background: #5A688A; color: white;">
+							<input id="vsB_lv" class="info_lv" onchange="vsCheck(this);"> 레벨 
+							<input id="vsB_bind" class="info_bind" onchange="vsCheck(this);"> 결속
+						</div>
+						<div id="vsB_hp" class="info_stat">
+							0000
+						</div>
+						<div id="vsB_atk" class="info_stat">
+							0000
+						</div>
+						<div id="vsB_spr" class="info_stat">
+							0000
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="kodex_vs_list">
+			<div style="text-align: center; width: 100%; padding: 19px 0px; display: block; background: #FFD400;">
+				위 마도서와 같은 스킬의 마도서 목록
+			</div>
+			<div style="height: calc(100% - 73px);" class="hideScrOut"><div id="list_main" class="hideScrIn"></div></div>
+		</section>
+		<ul id="kodex_vsExmpl" style="display: none;">
+		</ul>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="../QB_reactive.js"></script>
+<script src="../skill.js"></script>
+<script src="vs.js"></script>
+</html>

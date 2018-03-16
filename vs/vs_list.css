@@ -1,0 +1,35 @@
+﻿#kodex_vs_list {
+	background: #FFD400;
+	line-height: 35px;
+}
+.list_kodex {
+	width: calc(100% - 10px);
+	height: 45px;
+	margin: 5px;
+	margin-bottom: 0px;
+	background: #FFFF93;
+	font-size: 18px;
+	line-height: 41px;
+	cursor: pointer;
+}
+.list_kodex:hover {
+	opacity: 0.7;
+}
+.list_kodex div {
+	margin: 2px 4px;
+	/*text-align: left;*/
+}
+.list_rarity {
+	width: 39px;
+}
+.list_name {
+	width: 195px;
+}
+.list_value {
+	width: 81px;
+	color: white;
+}
+#list_main {
+	height: 100%;
+	background: #FFEB3B;
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="logo.png">
+	<title>QUTABASE</title>
+	<link rel="stylesheet" type="text/css" href="side.css">
+	<link rel="stylesheet" type="text/css" href="nanum.css">
+	<link rel="stylesheet" type="text/css" href="univ.css">
+	<style>
+	html {height: 100%;}
+	body {height: 100%;}
+		div {
+			background: #e3e4ee;
+		}
+		.kodex_head {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0px;
+			margin-right: 2px;
+			padding: 13.5px 9px;
+			height: 56px;
+			line-height: 56px;
+			float: none;
+		}
+		#kodex_header {
+			width: 100%;
+			height: 83px;
+			padding: 0px;
+			background: #dddddd;
+		}
+		#kodex_header:before {
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		#kodex_header_m {
+			width: 100%;
+			padding: 0px;
+			display: none;
+		}
+		#kodex_rarity {
+			width: calc(22% - 22px);
+			color: white;
+			font-size: 32px;
+		}
+		#kodex_name {
+			width: calc(67% - 22px);
+			color: white;
+			font-size: 32px;
+		}
+		#kodex_cst {
+			width: calc(11% + 2px);
+			padding: 13.5px 0px;
+		}
+		#kodex_rarity_m {
+			width: calc(50% - 20px);
+			color: white;
+			font-size: 32px;
+			padding-top: 22.5px; padding-bottom: 22.5px;
+		}
+		#kodex_name_m {
+			width: calc(100% - 20px);
+			color: white;
+			font-size: 32px;
+			margin-bottom: 2px;
+		}
+		#kodex_cst_m {
+			width: calc(50% - 20px);
+			padding-top: 22.5px; padding-bottom: 22.5px;
+		}
+		#kodex_skill {
+			width: calc(33% - 17px); height: 81px;
+			line-height: 81px;
+			font-size: 33px;
+			color: white;
+			cursor: pointer;
+		}
+		#kodex_skill:hover {
+			opacity: 0.7;
+		}
+		#kodex_desc {
+			width: calc(67% - 6px); height: 90px;
+			background: #dddddd;
+			padding: 0px;
+		}
+		#kodex_illustrator {
+			overflow: auto;
+		}
+		.kodex_desc_detail {
+			width: 50%; height: 50%;
+			padding: 0px;	margin: 0px/* 2px 2px 0px*/;
+			background: #dddddd;
+		}
+		.kodex_desc_detail_ind{
+			width: calc(33% - 20px); height: calc(100% - 10px);
+			line-height: 35px;
+			background: #5A688A; color: white;
+		}
+		.kodex_desc_detail_val{
+			width: calc(67% - 20px); height: calc(100% - 10px);
+			line-height: 35px;
+			text-align: left;
+		}
+		.kodex_img {
+			width: calc(100% / 3 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
+			max-height: 426px;
+		}
+		.kodex_imgRank {
+			width: calc(100% - 18px);
+			margin: 0px;
+			padding: 10px 9px;
+			background: #FFEB3B;
+		}
+		.kodex_imgfile {
+			width: 100%;
+			margin-top: 2px;
+		}
+		.kodex_statchart {
+			width: calc(100% / 9 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
+		}
+		.kodex_stat {
+			width: calc(100% - 18px);
+			margin: 0px;
+			margin-bottom: 2px;
+			padding: 10px 9px;
+		}
+/*		@media (max-width: 1000px){
+			article{max-width: 100%; max-height: 100%;}
+			#kodex_name{width: calc(56% - 22px);}
+			#kodex_cst{width: calc(22% + 2px);}
+			#kodex_skill{width: calc(100% - 20px);}
+			#kodex_desc{width: 100%;}
+			.kodex_img{max-height: none;}
+			.kodex_statchart{width: 100%; margin: 0px;}
+			.kodex_stat{width: calc(25% - 20px); margin-right: 2px;}
+		}*/
+
+		@media (max-width: 835px){
+			.kodex_desc_detail{width: calc(100% - 2px);}
+			#kodex_desc{height: auto;}
+		}
+		@media (max-width: 480px){
+			.kodex_img{width: calc(100% - 2px);}
+			#kodex_header{display: none;}
+			#kodex_header_m{display: inline-block;}
+		}
+
+	</style>
+</head>
+<body>	
+	<nav id="menu">
+		<ul id="menu_list"><a href="?"><img src="logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="skill/atk.html"><li>공격</li></a>
+					<a href="skill/hp.html"><li>방어</li></a>
+					<a href="skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="vs/index.html"><li>마도서 비교</li></a>
+			<a href="rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="simul/index.html"><li>덱 시뮬레이터</li></a>
+			<a href="print/index.html"><li>연차 시뮬레이터</li></a>
+		</ul>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="logo.svg">
+	</nav>
+	<section id="kodex_disable" style="display: block; height: 33%;">
+	</section>
+	<header id="kodex_form">
+		<a href="?"><img id="logo" src="logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article style="display: none;">
+		<div id="kodex_header">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_rarity">
+				DB
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name">
+				QUTABASE
+			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst">
+				COST<br><span id="kodex_cost">QU</span>
+			</div>
+		</div>
+		<div id="kodex_header_m">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m">
+				QUTABASE
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_rarity_m">
+				SSR
+			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst_m">
+				COST<br><span id="kodex_cost_m">QU</span>
+			</div>
+		</div>
+		<div id="kodex_skill" style="background: red;" onclick="location.href=''">
+			큐타베이스
+		</div>
+		<div id="kodex_desc">
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					역할
+				</div>
+				<div id="kodex_role" class="kodex_desc_detail_val">
+					Database
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					속성
+				</div>
+				<div id="kodex_skilltype" class="kodex_desc_detail_val">
+					검색 엔진
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					장르
+				</div>
+				<div id="kodex_faction" class="kodex_desc_detail_val">
+					불확정
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					그림
+				</div>
+				<div id="kodex_illustrator" class="kodex_desc_detail_val">
+					QUTABASE
+				</div>
+			</div>
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				NORMAL
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_0" alt="Kodex Normal interpret image" onerror="this.src='noimage.png'" src="noimage.png">
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				MAX
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_1" alt="Kodex MAX interpret image" onerror="this.src='noimage.png'" src="noimage.png">
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				MAX+
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_2" alt="Kodex MAX+ interpret image" onerror="this.src='noimage.png'" src="noimage.png">
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				스탯
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+				HP
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+				ATK
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
+				SPR
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				Lv.1
+			</div>
+			<div id="kodex_hp0" class="kodex_stat">
+				516
+			</div>
+			<div id="kodex_atk0" class="kodex_stat">
+				775
+			</div>
+			<div id="kodex_spr0" class="kodex_stat">
+				646
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				MAX
+			</div>
+			<div id="kodex_HP_0" class="kodex_stat">
+				3617
+			</div>
+			<div id="kodex_ATK_0" class="kodex_stat">
+				5430
+			</div>
+			<div id="kodex_SPR_0" class="kodex_stat">
+				4523
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				1결속
+			</div>
+			<div id="kodex_HP_1" class="kodex_stat">
+				3943
+			</div>
+			<div id="kodex_ATK_1" class="kodex_stat">
+				5919
+			</div>
+			<div id="kodex_SPR_1" class="kodex_stat">
+				4930
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				2결속
+			</div>
+			<div id="kodex_HP_2" class="kodex_stat">
+				4268
+			</div>
+			<div id="kodex_ATK_2" class="kodex_stat">
+				6407
+			</div>
+			<div id="kodex_SPR_2" class="kodex_stat">
+				5337
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				3결속
+			</div>
+			<div id="kodex_HP_3" class="kodex_stat">
+				4594
+			</div>
+			<div id="kodex_ATK_3" class="kodex_stat">
+				6896
+			</div>
+			<div id="kodex_SPR_3" class="kodex_stat">
+				5744
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				4결속
+			</div>
+			<div id="kodex_HP_4" class="kodex_stat">
+				4919
+			</div>
+			<div id="kodex_ATK_4" class="kodex_stat">
+				7385
+			</div>
+			<div id="kodex_SPR_4" class="kodex_stat">
+				6151
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				5결속
+			</div>
+			<div id="kodex_HP_5" class="kodex_stat">
+				5245
+			</div>
+			<div id="kodex_ATK_5" class="kodex_stat">
+				7874
+			</div>
+			<div id="kodex_SPR_5" class="kodex_stat">
+				6558
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				초월
+			</div>
+			<div id="kodex_HP_6" class="kodex_stat">
+				5570
+			</div>
+			<div id="kodex_ATK_6" class="kodex_stat">
+				8362
+			</div>
+			<div id="kodex_SPR_6" class="kodex_stat">
+				6965
+			</div>
+		</div>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="QB_reactive.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script>
+// Initialize Firebase
+var config = {
+apiKey: "AIzaSyCyv6-jayxjv7P0vQwaFC2I6azQVbGrWD0",
+authDomain: "qutabase.firebaseapp.com",
+databaseURL: "https://qutabase.firebaseio.com",
+projectId: "qutabase",
+storageBucket: "qutabase.appspot.com",
+messagingSenderId: "478971076528"
+};
+firebase.initializeApp(config);
+try {
+	kodexname = decodeURIComponent(url_parse("kodexName"));
+	search(kodexname);
+	document.getElementById('kodex_disable').setAttribute("style", "display: none; height: 33%;");
+}
+catch (exception){
+}
+
+</script>
+</html>

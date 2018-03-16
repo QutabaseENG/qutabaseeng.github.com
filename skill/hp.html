@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<title>QUTABASE - HP</title>
+	<script type="text/javascript" src="hp.js"></script>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="skill.css">
+	<style type="text/css">
+		#html_role {
+			background: #264BCC;
+		}
+		.kodex:hover{
+			background: #4068FB;
+		}
+	</style>
+	<script type="text/javascript">
+function checking(argument) {
+	if (argument.checked == true) {
+		argument.nextSibling.setAttribute('style', 'background: #273869; color: white;')
+	}
+	else {
+		argument.nextSibling.setAttribute('style', '')
+	}
+}
+	</script>
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="../vs/index.html"><li>마도서 비교</li></a>
+			<a href="../rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
+			<a href="../print/index.html"><li>연차 시뮬레이터</li></a>
+		</ul>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+	</nav>
+	<header id="kodex_form">
+		<a href="../"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check(1)" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<div id="html_role">
+			방어 마도서
+		</div>
+		<div id="skill_checker">
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Sidestep"><label for="Sidestep">간파</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Crack"><label for="Crack">골절</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Endurance"><label for="Endurance">근성</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Melee"><label for="Melee">난투</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Solidarity"><label for="Solidarity">단결</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Provoke"><label for="Provoke">도발</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Charge"><label for="Charge">돌진</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Dimsum"><label for="Dimsum">미미가효</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="CounterHP"><label for="CounterHP">반격</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Balmung"><label for="Balmung">발뭉: 불사신의 검</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Protection"><label for="Protection">방어</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Indomitable"><label for="Indomitable">불굴</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Valette"><label for="Valette">선봉의 약탈</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Resurrect"><label for="Resurrect">소생</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Gurad"><label for="Gurad">수호</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Suppress"><label for="Suppress">억압</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Retaliate"><label for="Retaliate">역습</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="WA2000"><label for="WA2000">와장창</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Support"><label for="Support">응원</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Fortitude"><label for="Fortitude">인내</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Regenerate"><label for="Regenerate">재생</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Jingle"><label for="Jingle">종소리 울려라</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Fortify"><label for="Fortify">철벽</label></div>
+			<div class="selecter"><input type="checkbox"  onclick="checking(this);maker()" id="Evade"><label for="Evade">회피</label></div>
+		</div>
+		<div class="kodex" id="index">
+			<div class="kodex_thumb">
+				아이콘
+			</div>
+			<div class="kodex_rarity" style="padding: 0px;">
+				등급
+			</div>
+			<div class="kodex_name" style="padding: 0px;">
+				마도서명
+			</div>
+			<div class="kodex_skill" style="padding: 0px;">
+				스킬
+			</div>
+			<!-- <div class="kodex_ATK_0">
+				공격력
+			</div> -->
+			<div class="kodex_HP_0" style="padding: 0px;">
+				체력
+			</div>
+			<div class="kodex_faction" style="padding: 0px;">
+				장르
+			</div>
+			<div class="kodex_illustrator" style="padding: 0px;">
+				일러스트
+			</div>
+		</div>
+		<section class="hideScrOut">
+			<section id="kodex_list" class="hideScrIn"><!-- 
+				<div class="kodex" id="index">
+					<div class="kodex_rarity">
+						SSR
+					</div>
+					<div class="kodex_name">
+						무인도의 메피스토펠레스
+					</div>
+					<div class="kodex_skill">
+						발뭉: 불사신의 검
+					</div>
+					<div class="kodex_ATK_0">
+						0000
+					</div>
+					<div class="kodex_HP_0">
+						0000
+					</div>
+					<div class="kodex_faction">
+						오리엔탈
+					</div>
+					<div class="kodex_illustrator">
+						아이작 헤인 3세&DUTO
+					</div>
+				</div> -->
+			</section>
+		</section>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script type="text/javascript" src="../QB_reactive.js"></script>
+<script type="text/javascript">
+var id_list = document.getElementById("kodex_list");
+for (var i = 0; i < key_list.length; i++) {
+	dex = eval("roleDex['" + key_list[i] + "']");
+	var element = document.createElement("div");
+	var reprint = ''
+	element.setAttribute("class", "kodex");
+	element.setAttribute("id", dex.id);
+	if (key_list[i].indexOf('® ') != -1) {
+		reprint = 'style="padding-top: 5px;"'
+		temp = key_list[i].substring(2);
+		dex = eval("Jdex['" + temp + "']");
+	}
+	else if (key_list[i].indexOf('®') != -1) {
+		reprint = 'style="padding-top: 5px;"'
+		temp = key_list[i].substring(1);
+		dex = eval("Jdex['" + temp + "']");
+	}
+	imgLink = 'https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+'small.png'
+
+	dex = eval("roleDex['" + key_list[i] + "']");
+	element.innerHTML = '<a href="../index.html?kodexName='+encodeURIComponent(dex.name)+'"><div class="kodex_thumb"><img src="'+imgLink+'" width="41px" height="41px"></div><div class="kodex_rarity">'+dex.rarity+'</div><div class="kodex_name"'+reprint+'>'+dex.name+'</div><div class="kodex_skill">'+dex.skill+'</div><div class="kodex_HP_0">'+dex.HP[0]+'</div><div class="kodex_faction">'+dex.faction+'</div><div class="kodex_illustrator">'+dex.illustrator+'</div></a>';
+	//<div class="kodex_ATK_0">'+dex.ATK[0]+'</div>
+	id_list.appendChild(element);
+}
+skillname = decodeURI(url_parse("skillName"))
+if (skillname != undefined) {
+	document.getElementById(eng.skill[skillname]).setAttribute('checked', '')
+	document.getElementById(eng.skill[skillname]).nextSibling.setAttribute('style', 'background: #273869; color: white;')
+	maker()
+}
+</script>
+</html>

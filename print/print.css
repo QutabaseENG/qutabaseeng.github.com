@@ -1,0 +1,28 @@
+article {
+	height: 803px;
+}
+
+#print_index {
+	height: 20%;
+	background: #FFE31E;
+}
+
+#print_imgBox {
+	margin: 29.75px 0;
+}
+
+#print_list {
+	height: 100%;
+	background: #FFFA7A;
+}
+
+.res_img {
+	width: 95.171px;
+}
+.res_kodex {
+	width: 115.16px;
+}
+.res_kodex:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}

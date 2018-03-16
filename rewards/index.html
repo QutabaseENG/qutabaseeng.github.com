@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112275806-1"></script>
+	<script src="https://qutabase.github.io/gAn.js"></script>
+	<meta charset="utf-8">
+	<meta name="keywords" content="qurare, qutabase, kodex">
+	<meta property="og:image" content="../logo.png">
+	<title>QUTABASE - Rewards</title>
+	<link rel="stylesheet" type="text/css" href="../side.css">
+	<link rel="stylesheet" type="text/css" href="../nanum.css">
+	<link rel="stylesheet" type="text/css" href="../univ.css">
+	<link rel="stylesheet" type="text/css" href="rewards_inf.css">
+	<link rel="stylesheet" type="text/css" href="rewards_event.css">
+	<style>
+		article {
+			min-width: 812px; height: 802px;
+			background: #FFFF93;
+		}
+
+		#rewards_select_list {
+			padding: 0px;
+			margin: 0px;
+			font-size: 30px;
+		}
+
+		#rewards_select_list li{
+			list-style: none;
+			display: inline-block;
+			width: calc(50% - 2px);
+			padding: 20px 1px;
+			margin: 0px;
+		}
+		#rewards_select_list li:hover{
+			opacity: 0.7;
+		}
+
+		#rewards_event {
+			height: calc(100% - 75px);	
+		}
+	</style>
+</head>
+<body>
+	<nav id="menu">
+		<ul id="menu_list"><a href="../index.html"><img src="../logo.svg"></a>
+			<a href="https://qtb.kinos.co.kr/"><li>QUTABASE 현황</li></a>
+			<li id="menu_skill" onclick="menu_skill_click()">
+				스킬
+				<ul id="list_skill" style="display: none;">
+					<a href="../skill/atk.html"><li>공격</li></a>
+					<a href="../skill/hp.html"><li>방어</li></a>
+					<a href="../skill/spr.html"><li>회복</li></a>
+				</ul>
+			</li>
+			<a href="../vs/index.html"><li>마도서 비교</li></a>
+			<a href="../rewards/index.html"><li>이포 &amp; 무나 보상</li></a>
+			<a href="../simul/index.html"><li>덱 시뮬레이터</li></a>
+			<a href="../print/index.html"><li>연차 시뮬레이터</li></a>
+		</ul>
+		<img id="menu_rotLogo" alt="QUTABASE Side Bar" src="../logo.svg">
+	</nav>
+	<header id="kodex_form">
+		<a href="../"><img id="logo" src="../logoW.svg"></a><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<ul id="kodex_exmpl" style="display: none;">
+		</ul>
+	</header>
+	<article>
+		<nav id="rewards_select">
+			<ul id="rewards_select_list"><li onclick="change(this)" style="background: #FFD300;">무한나선</li><li onclick="change(this)">이벤트 포인트</li></ul>
+		</nav>
+		<section id="rewards_inf">
+			<div id="rewards_inf_list">
+				층 별 보상 목록
+				<select id="rewards_inf_list_fSelect">
+					<option value="0">&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;~&nbsp;&nbsp;&nbsp;10</option>
+					<option value="1">&nbsp;&nbsp;11&nbsp;~&nbsp;&nbsp;&nbsp;20</option>
+					<option value="2">&nbsp;&nbsp;21&nbsp;~&nbsp;&nbsp;&nbsp;30</option>
+					<option value="3">&nbsp;&nbsp;31&nbsp;~&nbsp;&nbsp;&nbsp;40</option>
+					<option value="4">&nbsp;&nbsp;41&nbsp;~&nbsp;&nbsp;&nbsp;50</option>
+					<option value="5">&nbsp;&nbsp;51&nbsp;~&nbsp;&nbsp;&nbsp;60</option>
+					<option value="6">&nbsp;&nbsp;61&nbsp;~&nbsp;&nbsp;&nbsp;70</option>
+					<option value="7">&nbsp;&nbsp;71&nbsp;~&nbsp;&nbsp;&nbsp;80</option>
+					<option value="8">&nbsp;&nbsp;81&nbsp;~&nbsp;&nbsp;&nbsp;90</option>
+					<option value="9">&nbsp;&nbsp;91&nbsp;~&nbsp;100</option>
+					<option value="10">101&nbsp;~&nbsp;110</option>
+					<option value="11">111&nbsp;~&nbsp;120</option>
+					<option value="12">121&nbsp;~&nbsp;130</option>
+					<option value="13">131&nbsp;~&nbsp;140</option>
+					<option value="14">141&nbsp;~&nbsp;150</option>
+					<option value="15">151&nbsp;~&nbsp;160</option>
+					<option value="16">161&nbsp;~&nbsp;170</option>
+					<option value="17">171&nbsp;~&nbsp;180</option>
+					<option value="18">181&nbsp;~&nbsp;190</option>
+					<option value="19">191&nbsp;~&nbsp;200</option>
+				</select><script>
+document.getElementById('rewards_inf_list_fSelect').addEventListener('change', function() {
+	makeList(this.value);
+}, false);</script><br>
+				<div id="rewards_inf_list_box"></div>
+			</div>
+			<div id="rewards_inf_floor"><input type="number" id="floor_start" min="1" max="200" onchange="infGoal()">층부터<input type="number" id="floor_goal" min="1" max="200" onchange="infGoal()">층까지
+			</div>
+			<div id="rewards_inf_result">
+				받을 수 있는 보상<br>
+				<div id="inf_result_box"></div>
+			</div>
+		</section>
+		<section id="rewards_event" style="display: none;">
+			<div id="rewards_event_list">
+				점수 별 보상 목록<br>
+				<div id="rewards_event_list_box" -ms-overflow-style: none;></div>
+			</div>
+			<div id="rewards_event_point"><input type="number" id="point_start" min="1" max="1000" onchange="eventGoal()">만 점부터<input type="number" id="point_goal" min="1" max="1000" onchange="eventGoal()">만 점까지
+			</div>
+			<div id="rewards_event_result">
+				받을 수 있는 보상<br>
+				<div id="event_result_box"></div>
+			</div>
+		</section>
+	</article>
+	<footer>
+		ⓒ 2017 - 2018 Sn Kinos All Rights Reserved ( except the images )
+	</footer>
+</body>
+<script src="../QB_reactive.js"></script>
+<script src="rewards.js"></script>
+</html>
