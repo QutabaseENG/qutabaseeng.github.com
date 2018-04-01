@@ -75,7 +75,7 @@ function skill(dex, sd, lv, bind) {
 	var	dy3	=	parseFloat(
 					Jskill[dex.skill][sd[1] + 'ynamic3']
 				);
-	
+
 	var	pd	=	(sd.id)
 				?
 				Jskill[dex.skill].duration
@@ -87,7 +87,7 @@ function skill(dex, sd, lv, bind) {
 				);
 
 	for (eff in effect){
-		
+
 		var	temp	=	Jeffect[effect[eff]];
 
 		// document.getElementById(zoneid + 'effect').setAttribute('style'
@@ -118,7 +118,7 @@ function skill(dex, sd, lv, bind) {
 						Jskill[dex.skill][sd[0] + 'tatic'	+	count]
 					);
 		var	dy	=	(Jskill[dex.skill][sd[1] + 'ynamic'	+	count] == 'lea')
-					? 
+					?
 					parseFloat(
 						Math.floor(
 							val

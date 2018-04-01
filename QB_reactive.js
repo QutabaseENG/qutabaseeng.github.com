@@ -1,6 +1,6 @@
 if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
-	var eventNames = ["mousedown", "mouseover", "mouseout", "mousemove", "mousedrag", "click", "dblclick", "keydown", "keypress", "keyup" ]; 
-	
+	var eventNames = ["mousedown", "mouseover", "mouseout", "mousemove", "mousedrag", "click", "dblclick", "keydown", "keypress", "keyup" ];
+
 	for( var i = 0 ; i < eventNames.length; i++ ) {
 		window.addEventListener( eventNames[i], function(e) {
 			window.event = e;
@@ -58,13 +58,13 @@ function check(argument) {
 	else if (kodex_srch.value == '' && window.event.keyCode == 8) {
 		document.getElementById('kodex_exmpl').setAttribute('style'
 				,	'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: none;'
-		);		
+		);
 	}
 
 }
 
 function metaMake(index, content) {
-	
+
 	var headMeta = document.getElementsByTagName('head')[0];
 	var metaAdd = document.createElement("meta");
 	if (index.substring(0, 2) == 'og') {
@@ -110,7 +110,7 @@ function search(srch) {
 	else {
 		;
 	}
-	
+
 	dex = eval("Jdex['" + srch + "']");
 
 	if (dex != undefined) {
@@ -230,7 +230,7 @@ function showExmpl(argument) {
 				,	'left: ' + inp.offsetLeft + 'px; top: ' + eval(inp.offsetTop + 30) + 'px; display: block;'
 		);
 		ul.innerHTML = '';
-		
+
 		var i = 1;
 		for (i = 1; i <= ex_list[0]; i++) {
 
@@ -244,7 +244,7 @@ function showExmpl(argument) {
 									;
 			}
 
-		
+
 		}
 
 		if (i == 1) {
@@ -269,4 +269,3 @@ function url_parse(argument) {
 		}
 	}
 }
-
